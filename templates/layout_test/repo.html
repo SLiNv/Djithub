@@ -1,0 +1,40 @@
+{% extends 'layout_test/layout.html' %}
+
+{% block git %}
+	{% include "layout_test/git_layout.html" %}
+{% endblock %}
+
+{% block content %}
+
+<!-- Show the path -->
+<ul class="breadcrumb">
+	<li class="active">{{repo}}</li>
+</ul>
+
+<!-- git file tree -->
+{% if tree %}
+<table class="table table-hover">
+	<thead>
+		<tr>
+			<th width="150">Filename</th>
+			<th width="150">Last Change</th>
+			<th>Last commit</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for entry in tree %}
+		<tr>
+			<td>
+				<i class="glyphicon glyphicon-{% if entry.filemode == 16384 %}folder-close{% else %}list-alt{% endif %}"></i>
+				<a href="#">
+			  {{ entry.name }}
+			</a>
+			</td>
+			<td> An hour Ago </td>
+			<td><a href="#"> {{ entry.hex }} </a></td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+{% endif %}
+{% endblock %}
