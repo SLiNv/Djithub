@@ -1,0 +1,18 @@
+# install python 
+# install git 
+
+pip install virtualenv
+pip install virtualenvwrapper-win
+
+cd C:\Users\zhuz3
+git clone https://github.com/SLiNv/django_git_tinymce.git
+cd django_git_tinymce
+git checkout pygit2
+
+mkvirtualenv django_git_tinymce
+setprojectdir .
+
+git status
+git add *
+git commit
+git push -u origin pygit2
