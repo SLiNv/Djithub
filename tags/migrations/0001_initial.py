@@ -10,7 +10,8 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('repos', '0010_remove_repository_admins'),
+        # ('repos', '0010_remove_repository_admins'),
+        ('repos', '0001_initial'),
     ]
 
     operations = [
